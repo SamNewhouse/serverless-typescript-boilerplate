@@ -32,7 +32,7 @@ provider:
         - xray:PutTraceSegments
         - xray:PutTelemetryRecords
         - lambda:InvokeFunction
-        - lambda:InvokeAsync
+        - lambda:InvokeAsyncserverless
       Resource: '*'
 
   lambdaHashingVersion: 20201221
@@ -42,13 +42,6 @@ provider:
       - access-api-key
 
 configValidationMode: error
-
-package:
-  individually: true
-  exclude:
-    - .git/**
-    - .vscode/**
-    - .test/**
 
 custom:
   stage: ${opt:stage, self:provider.stage}
