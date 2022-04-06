@@ -1,0 +1,12 @@
+ApiGatewayRestApi:
+  Type: AWS::ApiGateway::RestApi
+  Properties:
+    Name: ${self:custom.stackname}
+    Description: API Gateway ${self:custom.stackname}
+
+ApiGatewayResourceHello:
+  Type: AWS::ApiGateway::Resource
+  Properties:
+    RestApiId: { Ref: 'ApiGatewayRestApi' }
+    ParentId: { Fn::GetAtt: 'ApiGatewayRestApi.RootResourceId' }
+    PathPart: hello

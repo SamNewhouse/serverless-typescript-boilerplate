@@ -1,0 +1,9 @@
+hello:
+  handler: src/functions/hello/index.handler
+  timeout: 29
+  memorySize: 128
+  reservedConcurrency: 5
+  events:
+    - http:
+        path: /hello
+        method: GET
