@@ -76,6 +76,6 @@ functions: ${file(./config/functions.yml)}
 
 resources:
   Description: ${self:custom.description}
-  
+
   Resources: ${file(./config/resources.yml)}
   Outputs: ${file(./config/outputs.yml)}
