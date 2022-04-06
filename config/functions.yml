@@ -7,3 +7,4 @@ hello:
     - http:
         path: /hello
         method: GET
+        private: true

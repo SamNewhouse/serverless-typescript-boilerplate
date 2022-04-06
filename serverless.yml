@@ -26,16 +26,16 @@ provider:
     apiGateway: true
     lambda: true
 
-  iamRoleStatements:
-    - Effect: 'Allow'
-      Action:
-        - xray:PutTraceSegments
-        - xray:PutTelemetryRecords
-        - lambda:InvokeFunction
-        - lambda:InvokeAsyncserverless
-      Resource: '*'
-
-  lambdaHashingVersion: 20201221
+  iam:
+    role:
+      statements:
+        - Effect: 'Allow'
+          Action:
+            - xray:PutTraceSegments
+            - xray:PutTelemetryRecords
+            - lambda:InvokeFunction
+            - lambda:InvokeAsyncserverless
+          Resource: '*'
 
   apiGateway:
     apiKeys:
