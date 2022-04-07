@@ -1,7 +1,7 @@
-import { IResponse } from 'types';
+import { Response } from 'types';
 import { ENV } from 'env';
 
-export default function response(body: any, statusCode: number): IResponse {
+export default function response(body: any, statusCode: number): Response {
   return {
     statusCode,
     isBase64Encoded: false,
@@ -36,7 +36,7 @@ export function success(body?: any) {
 export function systemError(error: Error) {
   const r: { [key: string]: any } = { error: 'system error' };
 
-  if (ENV === 'development') {
+  if (ENV === 'local') {
     r.messes = error.message;
     r.stack = error.stack;
   }
