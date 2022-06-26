@@ -16,7 +16,7 @@ module.exports = {
   ],
   output: {
     libraryTarget: 'commonjs2',
-    path: path.resolve(__dirname, '.webpack'),
+    path: path.resolve(__dirname, '.serverless'),
     filename: '[name].js',
   },
   optimization: {
